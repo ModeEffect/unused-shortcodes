@@ -3,8 +3,8 @@ Contributors: scott.deluzio
 Tags: admin, shortcode, shortcodes, performance, code, plugin
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4CZMFDE6YG95L
 Requires at least: 3.1.0
-Tested up to: 4.5
-Stable tag: 1.0.2
+Tested up to: 5.2.0
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,7 +21,7 @@ Figuring out which pages or posts have these shortcodes can be very time consumi
 
 With this plugin, you simply enter a shortcode tag and it will return a list of every page or post where that particular shortcode tag is being used. You can quickly jump to the edit page for those pages or posts to remove or edit the shortcode if you need to.
 
-If you can't remember all the shortcodes you want to check, try the Edit Screen Shortcode Lister plugin (http://wordpress.org/plugins/shortcode-lister/) which will list out the shortcodes you have available to use on your site in the page or post edit screen. 
+If you can't remember all the shortcodes you want to check, try the Edit Screen Shortcode Lister plugin (http://wordpress.org/plugins/shortcode-lister/) which will list out the shortcodes you have available to use on your site in the page or post edit screen.
 
 == Installation ==
 1. Download archive and unzip in wp-content/plugins or install via Plugins - Add New.
@@ -52,6 +52,9 @@ Sure! Once you have translated it, let me know and I'll be sure to get your tran
 2. If the shortcode is in use, you can see a list of all the pages and posts where the shortcode is being used. Quick links are provided to let you view the live version of the page, or go straight to the edit screen to make your changes. screenshot-2.png
 
 == Changelog ==
+= 1.0.3 =
+* Fix: Cross-site scripting vulnerability discovered and corrected.
+
 = 1.0.2 =
 * Minor updates
 
@@ -62,5 +65,5 @@ Sure! Once you have translated it, let me know and I'll be sure to get your tran
 * Initial release.
 
 == Upgrade Notice ==
-= 1.0.2 =
-* Minor updates
+= 1.0.3 =
+* Fix: Cross-site scripting vulnerability discovered and corrected.

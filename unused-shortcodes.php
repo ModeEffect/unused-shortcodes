@@ -4,16 +4,16 @@
    Plugin URI: https://surpriseazwebservices.com/wordpress-plugins/wordpress-unused-shortcodes/
    Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4CZMFDE6YG95L
    Description: A plugin to display shortcodes that are not currently being used on a WordPress site.
-   Version: 1.0.2
+   Version: 1.0.3
    Author: Scott DeLuzio
    Author URI: https://surpriseazwebservices.com
    License: GPL2
    */
-   
+
 	/*  Copyright 2013  Scott DeLuzio  (email : scott (at) surpriseazwebservices.com)
 
     This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
+    it under the terms of the GNU General Public License, version 2, as
     published by the Free Software Foundation.
 
     This program is distributed in the hope that it will be useful,
@@ -62,21 +62,20 @@ function register_unused_shortcodes_settings() {
 
 // Display the page content for the submenu
 function unusedshortcodespage() {
-	include(WP_PLUGIN_DIR.'/unused-shortcodes/options.php');  
+	include(WP_PLUGIN_DIR.'/unused-shortcodes/options.php');
 }
-	
+
 /* Find each available shortcode in a page or post */
 function find_shortcodes($atts) {
 	ob_start();
 	extract(shortcode_atts(array('find' => ''), $atts));
 
-	$string = "[";
-	$string .= $atts['find'];
+	$string = sanitize_text_field( $atts['find'] );
 
 		$args = array('s' => $string);
 		$the_query = new WP_Query( $args );
 			if ( $the_query->have_posts() ) {
-					echo '<strong>' . $string . ']</strong> ';
+					echo '<strong>[' . esc_html( $string ) . ']</strong> ';
 					echo _e('is currently in use in the following page(s)/post(s):', 'unused_sc_lang');
 					echo '<ul>';
 				while ( $the_query->have_posts() ) {
@@ -86,7 +85,7 @@ function find_shortcodes($atts) {
 				}
 					echo '</ul>';
 			} else {
-					echo _e('No posts found using the shortcode ', 'unused_sc_lang') . '<strong>' . $string . ']</strong>'; 
+					echo _e('No posts found using the shortcode ', 'unused_sc_lang') . '<strong>' . $string . ']</strong>';
 			}
 	wp_reset_postdata();
 	return ob_get_clean();
