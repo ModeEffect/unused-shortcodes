@@ -4,7 +4,7 @@
    Plugin URI: https://surpriseazwebservices.com/wordpress-plugins/wordpress-unused-shortcodes/
    Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4CZMFDE6YG95L
    Description: A plugin to display shortcodes that are not currently being used on a WordPress site.
-   Version: 1.0.3
+   Version: 1.0.4
    Author: Scott DeLuzio
    Author URI: https://surpriseazwebservices.com
    License: GPL2
